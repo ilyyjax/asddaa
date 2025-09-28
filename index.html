@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sex — The Sex Dex</title>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- START OVERLAY -->
+  <div id="start-overlay" class="overlay">
+    <div class="overlay-card">
+      <h1>Welcome to <span class="accent">Sex</span></h1>
+      <p class="lead">The Sex Dex — live human & market dashboard</p>
+      <button id="enter-btn" class="btn">Enter</button>
+      <div class="overlay-sub">Data seeded from UN / UNICEF / market reports.</div>
+    </div>
+  </div>
+
+  <!-- topbar -->
+  <header class="topbar">
+    <div class="brand">Sex</div>
+    <nav class="tabs" role="tablist" aria-label="Main tabs">
+      <button class="tab active" data-tab="babies">Babies Born</button>
+      <button class="tab" data-tab="condoms">Condom Prices</button>
+      <button class="tab" data-tab="women">Number of Women</button>
+    </nav>
+  </header>
+
+  <!-- animated background shapes -->
+  <div id="bg-anim">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
+
+  <main class="container">
+    <!-- LEFT INFO COLUMN -->
+    <aside class="info-col" id="info-col">
+      <!-- will be populated by script -->
+    </aside>
+
+    <!-- MAIN PANELS -->
+    <section class="panels">
+      <!-- Babies -->
+      <div id="babies" class="panel active" role="tabpanel">
+        <div class="panel-header">
+          <div class="big-counter" id="babies-counter">0</div>
+          <div class="panel-title">Babies born (live)</div>
+        </div>
+        <canvas id="babies-chart"></canvas>
+      </div>
+
+      <!-- Condoms -->
+      <div id="condoms" class="panel" role="tabpanel" aria-hidden="true">
+        <div class="panel-header">
+          <div class="big-counter" id="condoms-counter">$0.00</div>
+          <div class="panel-title">Condom price (simulated)</div>
+        </div>
+        <canvas id="condoms-chart"></canvas>
+      </div>
+
+      <!-- Women -->
+      <div id="women" class="panel" role="tabpanel" aria-hidden="true">
+        <div class="panel-header">
+          <div class="big-counter" id="women-counter">0</div>
+          <div class="panel-title">Number of women (global)</div>
+        </div>
+        <canvas id="women-chart"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Live simulated data • Charts update every second • Sources: UN, UNICEF, market reports</small>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
